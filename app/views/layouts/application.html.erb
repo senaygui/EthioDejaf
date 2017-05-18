@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Dejaf</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+    <header>
+        <%= render '/layouts/main_nav'%>
+    </header>
+    <main>
+        <%= yield %>
+    </main>
+    
+</body>
+
 </html>
