@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  
   devise_for :users
+  resources :user_profiles
   root to: 'static_pages#home'
 
   get 'contact' => 'static_pages#contact'

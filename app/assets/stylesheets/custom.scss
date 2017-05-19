@@ -4,8 +4,32 @@ $secondary-color: color("yellow", "base") !default;
 @import 'materialize';
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
-.red,.amber,.green,.blue {
+.red,.amber,.green1,.blue {
 	background-image: url("food.jpg");
 	background-size: cover;
 }
 
+.file-uplaod{
+	position: relative;
+
+}
+.file-uplaod:hover {
+		 background-image: -webkit-linear-gradient(127deg, #000, #fff);
+         background-image: linear-gradient(323deg, #000, #fff);
+	}
+.file-uplaod input[type=file]{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+    right: 0;
+	height: 200px;
+	width: 225px;
+}
+.username{
+	font-size: 1.6em;
+	font-family: 'Baloo', cursive; 
+}
+.bio{
+	font-size: 0.5em;
+	font-family: 'Open Sans Condensed', sans-serif; 
+}

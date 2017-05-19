@@ -8,9 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="#e8f5e9 green lighten-5">
     <header>
-      <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path)%>
+      <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path) &&  !current_page?(new_user_profile_path)%>
           <%= render '/layouts/main_nav'%>
       <% end %>
     </header>
@@ -22,13 +22,13 @@
         <section class="main-section">
             <%= yield %>
         </section>
-      <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path)%>
+      <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path) &&  !current_page?(new_user_profile_path)%>
         <%= render '/layouts/fab'%>
       <% end %>
       
       
     </main>
-    <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path)%>
+    <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path) &&  !current_page?(new_user_profile_path)%>
       <footer>
         <%= render '/layouts/footer'%>
       </footer>
