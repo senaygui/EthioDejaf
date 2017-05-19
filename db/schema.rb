@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519123546) do
+ActiveRecord::Schema.define(version: 20170519232303) do
+
+  create_table "businesses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "business_name",        null: false
+    t.string   "business_address",     null: false
+    t.string   "business_catagory",    null: false
+    t.string   "mobile_number"
+    t.string   "business_email"
+    t.text     "business_description", null: false
+    t.string   "business_photo"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["user_id"], name: "index_businesses_on_user_id"
+  end
 
   create_table "user_profiles", force: :cascade do |t|
     t.integer  "user_id"
