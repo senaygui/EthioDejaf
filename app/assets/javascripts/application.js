@@ -15,3 +15,9 @@
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require_tree .
+
+
+$( document ).on('turbolinks:load', function(){
+	$(".button-collapse").sideNav();
+	$('.carousel.carousel-slider').carousel({fullWidth: true});
+})
