@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Dejaf</title>
+  <head>
+    <title>Dejaf <%= yield(:title) %></title>
     <%= csrf_meta_tags %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <%= render '/layouts/main_nav'%>
-
+      <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path)%>
+          <%= render '/layouts/main_nav'%>
+      <% end %>
     </header>
     <main>
-        <%= yield %>
+        <section class="message">
+            <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        </section>
+        <section class="main-section">
+            <%= yield %>
+        </section>
+      <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path)%>
         <%= render '/layouts/fab'%>
+      <% end %>
+      
+      
     </main>
-    <footer>
+    <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path)%>
+      <footer>
         <%= render '/layouts/footer'%>
-    </footer>
-</body>
+      </footer>
+    <% end %>
 
+  </body>
 </html>

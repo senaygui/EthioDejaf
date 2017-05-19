@@ -1,0 +1,34 @@
+<%provide(:title, "| Login")%>
+<div class="container">
+  <div class="row">
+    <div class="col l6 m6 s12 offset-l3 offset-m3">
+    <span class="center"><%= link_to image_tag("3", :alt => "logo"), root_path %></span>
+      <div class="card z-depth-0">
+        <div class="card-content black-text">
+          <span class="card-title">Login</span>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="input-field">
+              <%= f.email_field :email, autofocus: true,placeholder: "Email" %>
+            </div>
+            <div class="input-field">
+              <%= f.password_field :password, autocomplete: "off",placeholder:"Password" %>
+            </div>
+            <% if devise_mapping.rememberable? -%>
+              <p>
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              <p>
+            <% end -%>
+
+            <div class="actions">
+              <%= f.submit "Log in", class: "btn" %>
+            </div>
+          <% end %>
+          <span><%= render "devise/shared/links" %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
