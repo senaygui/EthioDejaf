@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'businesses/new'
+
+  get 'businesses/edit'
+
+  get 'businesses/show'
+
   devise_for :users
   resources :user_profiles
   root to: 'static_pages#home'
