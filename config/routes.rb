@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'businesses/new'
-
-  get 'businesses/edit'
-
-  get 'businesses/show'
+resources :businesses
 
   devise_for :users
   resources :user_profiles

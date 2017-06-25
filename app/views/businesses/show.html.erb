@@ -1,2 +1,36 @@
-<h1>Businesses#show</h1>
-<p>Find me in app/views/businesses/show.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m12 l6">
+			<div class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126115.11523351159!2d38.7781448!3d8.96317685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1498391871412" width="450" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+			<div class="business-address">
+				<div class="card">
+					<div class="card-content black-text">
+						<ul>
+							<li><i class="material-icons">email</i><%= @business.business_email%></li>
+							<li><i class="material-icons">phone</i><%= @business.mobile_number%></li>
+							<li><i class="material-icons">label</i><%= @business.business_catagory%></li>
+							<li><i class="material-icons">location_on</i><%= @business.business_address%></li>
+							<li><%=link_to "contact owner", "#", class: "btn"%></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="col.s12.m12.l6">
+			<span><%= @business.business_name%></span><span style="visibility: hidden;">x</span> 
+			<%if current_user%>
+				<%= link_to("Edit Business", edit_business_path , class: "btn #212121 grey darken-4") %>
+			<%else%>
+				<%= link_to("Write A Review", "#" , class: "btn #212121 grey darken-4") %>
+			<%end%>
+			 <br><br>
+			<%= image_tag @business.business_photo_url, size:"250x250", class: "responsive-img"%>
+			<p><%= @business.business_description%></p>
+				
+			
+		</div>
+	</div>
+</div>

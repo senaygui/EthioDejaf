@@ -1,0 +1,24 @@
+<div class="input-field">
+	<%= f.label :business_photo, "Business Photo" %> <br><br>
+	<%= f.file_field :business_photo %>
+</div>
+<div class="input-field">
+	<%= f.text_field :business_name, autofocus: true, placeholder: "Business Name" %>
+</div>
+<div class="input-field">
+	<%= f.email_field :business_email, autofocus: true, placeholder: "Business Email" %>
+</div>
+<div class="input-field">
+	<%= f.label :business_catagory, "Business Catagory" %> <br>
+	<%= f.select :business_catagory, options_for_select([ "Restaurants", "Cafe", "Hotels and travel", "health and medical","arts and entertment", "professional Services" ])%>
+</div>
+<div class="input-field">
+	<%= f.text_area :business_description, autofocus: true, placeholder: "Business Description" %>
+</div>
+
+<div class="input-field">
+	<%= f.text_field :mobile_number, autofocus: true, placeholder: "Business Phone Number" %>
+</div>
+<div class="input-field">
+	<%= f.text_field :business_address, autofocus: true, placeholder: "Business Address" %>
+</div>

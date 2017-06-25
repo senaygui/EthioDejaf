@@ -46,7 +46,7 @@ before_action :find_businesses, only: [:show, :edit, :update, :destroy]
 
 private
 
-	def find_user_profiles
+	def find_businesses
 		@business = Business.find(params[:id])
 	end
 
