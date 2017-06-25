@@ -29,6 +29,7 @@ gem 'materialize-sass', '~> 0.98.2'
 gem 'devise', '~> 4.3'
 gem 'carrierwave', '~> 1.1'
 gem 'mini_magick', '~> 4.7'
+# gem 'jquery-raty-rails', '~> 0.0.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

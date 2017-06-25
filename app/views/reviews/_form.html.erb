@@ -1,0 +1,15 @@
+<%= form_for([@business, @business.reviews.build]) do |f| %>
+	<div id="rating-form">
+		<label> Rating </label>
+	</div>
+	<%= f.text_area :comment %>
+	<%= f.button :submit, :class => "btn" %>
+<% end %>
+
+
+<script>
+	$('#rating-form').raty({
+		path: '/assets/',
+		scoreName: 'review[ratting]'
+	});
+</script>

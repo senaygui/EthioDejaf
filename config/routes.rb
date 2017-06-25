@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-resources :businesses
+  resources :businesses do
+  	resources :reviews
+  end
 
   devise_for :users
   resources :user_profiles
