@@ -1,0 +1,28 @@
+<%= form_tag(businesses_path, :method => "get", id: "search-form") do %>
+    <div class="row">
+        <div class="col l8 s8 m8" style="padding-left:200px;"><%= text_field_tag :search, params[:search], placeholder: "Search By Business name" %></div>
+    <div class="col l4 s4 m4" style="padding-top:10px;"><%= submit_tag "Search", class: "btn #1b5e20 green darken-4"%></div>
+    </div>
+<% end %>
+
+<h1>businesses</h1>
+<% @businesses.each do |f|%>
+
+    <div class="col s12 m6 l6">
+    <div class="card horizontal">
+      <div class="card-image">
+        <%= image_tag f.business_photo_url, class: "responsive-img"%>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <span class="card-title"><%=f.business_name%></span>
+          <p><%= f.business_description%></p>
+        </div>
+        <div class="card-action">
+           <%= link_to("write a review", new_business_review_path(f) , class: "btn #212121 grey darken-4") %>
+           <%= link_to("details", business_path(f) , class: "btn #212121 grey darken-4") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%>

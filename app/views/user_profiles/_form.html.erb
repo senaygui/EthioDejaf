@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col l4">
+		<div class="file-uplaod">
+			<%= image_tag("avatar", class: "responsive-img", size: "200x300") %>
+			<%= f.file_field :avatar%>
+		</div>
+		
+	</div>
+	<div class="col l8">
+		<div class="input-field">
+			<%=	f.text_field :username ,placeholder: "Username",class: "validate"%>
+		</div>
+		<div class="row">
+			<div class="col l3 s6 m3">
+				<div class="input-field">
+					<%=	f.text_field :age ,placeholder: "Age",class: "validate"%>
+				</div>
+			</div>
+			<div class="input-field col l4 s6 m3">
+				<select name="user_profile[sex]" id="user_profile_sex">
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+				</select>
+				
+			</div>
+			<div class="col l4"></div>
+		</div>
+		<div class="input-field">
+			<i class="material-icons prefix">mode_edit</i>
+			<%= f.text_area :bio, class: "materialize-textarea", length:"140" %>
+			<%= f.label :bio, "bio"%>
+		</div>
+
+	</div>
+</div>

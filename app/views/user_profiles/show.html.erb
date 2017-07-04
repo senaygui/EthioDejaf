@@ -1,17 +1,14 @@
 <div class="row">
-	<div class="col l12 s12 m12">
-		<div class="card">
-			<div class="card-content black-text">
-				<div class="row">
-					<div class="col l2">
-						
-							<%= image_tag @user_profile.avatar_url, class: "responsive-img", alt: "#{@user_profile.username} Image"  %>
-				        
-					</div>
-					<div class="col l8">
-						<span class="username"><%= @user_profile.username %></span><br />
-						<span class="bio"><%= @user_profile.bio %></span>
-					</div>
+	<div class="col s12 m12 l12">
+		<div class="card center">
+			<div class="card-content">
+				<div class="image">
+					<%= image_tag @user_profile.avatar_url, class: "responsive-img circle"%>
+				</div>
+				<div class="info">
+					<span><%= @user_profile.username %></span><br><br>
+					<p><%= @user_profile.bio%></p>
+					<%= link_to("Edit Profile", edit_user_profile_path , class: "btn") %>
 				</div>
 			</div>
 		</div>

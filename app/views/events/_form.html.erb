@@ -1,0 +1,17 @@
+<div class="input-field">
+	<%= f.label :event_photo, "Event Photo" %> <br><br>
+	<%= f.file_field :event_photo %>
+</div>
+<div class="input-field">
+	<%= f.text_field :event_name, autofocus: true, placeholder: "Event Name" %>
+</div>
+<div class="input-field">
+	<%= f.text_area :event_description, autofocus: true, placeholder: "Event Description" %>
+</div>
+
+<div class="input-field">
+	<%= f.text_field :starting_date, autofocus: true, placeholder: "Starting Date" %>
+</div>
+<div class="input-field">
+	<%= f.text_field :end_date, autofocus: true, placeholder: "Ending Date" %>
+</div>

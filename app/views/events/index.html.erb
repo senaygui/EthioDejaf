@@ -1,0 +1,23 @@
+<div class="row">
+<h1>Events</h1>
+<% @events.each do |f|%>
+  
+      <div class="col s12 m6 l6">
+      <div class="card horizontal">
+        <div class="card-image">
+          <%= image_tag f.event_photo_url, class: "responsive-img"%>
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="card-title"><%=f.event_name%></span>
+            <p><%= f.event_description%></p>
+          </div>
+          <div class="card-action">
+             <%= link_to("details", business_event_path(f.business,f.id) , class: "btn #212121 grey darken-4") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+<%end%>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col s12 m12 l4">
+			<div class="row">
+				<div class="col s12 m12 l12">
+					<%= image_tag @event.event_photo_url, class: "responsive-img", size: "450x350"%>
+				</div>
+				<div class="col s12 m12 l12">
+					<div class="card">
+						<div class="card-content">
+							<span><%= @event.event_name%></span><br>
+							<span><%= @event.starting_date%></span><br>
+							<span><%= @event.end_date%></span>
+							<%= link_to("edit event", edit_business_event_path(@business, @event) ,class: "btn black" ) %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col s12 m12 l8">
+			
+			<div class="card">
+				<div class="card-content">
+					<%= @event.event_description%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

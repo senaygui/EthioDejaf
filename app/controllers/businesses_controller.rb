@@ -1,7 +1,14 @@
 class BusinessesController < ApplicationController
 before_action :authenticate_user!, only: [:new,:show, :edit]
 before_action :find_businesses, only: [:show, :edit, :update, :destroy]
-
+	def index
+		@businesses = Business.all
+		if params[:search]
+    		@businesses = Business.search(params[:search]).order("created_at DESC")
+  		else
+    		@businesses = Business.all.order('created_at DESC')
+  		end
+	end
 	def new
 	 @business = current_user.businesses.build 
 	end

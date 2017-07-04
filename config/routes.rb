@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
+
+  
+
   resources :businesses do
+    resources :events
   	resources :reviews
   end
 

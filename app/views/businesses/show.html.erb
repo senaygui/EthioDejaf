@@ -24,12 +24,13 @@
 			
 		</div>
 		<div class="col.s12.m12.l6">
-			<span><%= @business.business_name%></span><span style="visibility: hidden;">x</span> 
-			<%if current_user%>
+			<span><%= @business.business_name%></span><span style="visibility: hidden;">x</span>
+			<%= link_to("Add Event", new_business_event_path(@business) , class: "btn #212121 grey darken-4") %> 
+			
 				<%= link_to("Edit Business", edit_business_path , class: "btn #212121 grey darken-4") %>
-			<%else%>
+			
 				<%= link_to("Write A Review", new_business_review_path(@business) , class: "btn #212121 grey darken-4") %>
-			<%end%>
+			
 			 <br><br>
 			<%= image_tag @business.business_photo_url, size:"250x250", class: "responsive-img"%>
 			<p><%= @business.business_description%></p>
@@ -39,34 +40,17 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="col s12 m12 16">
+		<div class="reviews">
+			<h1> Reviews </h1>
+			<%= render 'reviewshow' %>
 
-<div class="col-md-12">
-	<div class="reviews">
-		<h1> Reviews </h1>
-		<%= render @business.reviews %>
+		</div>
 	</div>
 </div>
 
-	<% @business.reviews.each do |review| %>
-		<div class="col s12 m7">
-    
-	    <div class="card horizontal">
-	      <div class="card-image">
-	      	<%= review.user.user_profile.try(:avatar_url) %>
-	      	
-	      </div>
-	      <div class="card-stacked">
-	        <div class="card-content">
-	          <p><%= review.ratting%></p><br>
-	          <p><%= review.comment%></p>
-	        </div>
-	        <div class="card-action">
-	          <a href="#">This is a link</a>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	<%end%>
+
 
 
 

@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 before_action :find_business
-	before_action :find_review, only: [:edit, :update, :destroy]
+	before_action :find_review, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, only: [:new, :edit]
 
 	def new
@@ -29,7 +29,8 @@ before_action :find_business
 			render 'edit'
 		end
 	end
-
+	def show
+	end
 	def destroy
 		@review.destroy
 		redirect_to business_path(@business)

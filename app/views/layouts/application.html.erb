@@ -22,13 +22,13 @@
         <section class="main-section">
             <%= yield %>
         </section>
-      <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path) &&  !current_page?(new_user_profile_path)%>
+      <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path) &&  !current_page?(new_user_profile_path) && user_signed_in?%>
         <%= render '/layouts/fab'%>
       <% end %>
       
       
     </main>
-    <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path) &&  !current_page?(new_user_profile_path)%>
+    <% if !current_page?(new_user_registration_path) &&  !current_page?(new_user_session_path) &&  !current_page?(new_user_profile_path )%>
       <footer>
         <%= render '/layouts/footer'%>
       </footer>

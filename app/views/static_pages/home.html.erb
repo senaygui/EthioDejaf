@@ -1,21 +1,71 @@
   <div class="carousel carousel-slider center" data-indicators="true">
     <div class="carousel-fixed-item center">
-      <a class="btn waves-effect white grey-text darken-text-2">button</a>
+     
     </div>
     <div class="carousel-item red white-text" href="#one!">
-      <h2>First Panel</h2>
-      <p class="white-text">This is your first panel</p>
+     
+
     </div>
     <div class="carousel-item amber white-text" href="#two!">
-      <h2>Second Panel</h2>
-      <p class="white-text">This is your second panel</p>
+     
     </div>
     <div class="carousel-item green white-text" href="#three!">
-      <h2>Third Panel</h2>
-      <p class="white-text">This is your third panel</p>
+     
     </div>
     <div class="carousel-item blue white-text" href="#four!">
-      <h2>Fourth Panel</h2>
-      <p class="white-text">This is your fourth panel</p>
+      
     </div>
   </div>
+<%= form_tag(businesses_path, :method => "get", id: "search-form") do %>
+    <div class="row">
+        <div class="col l8 s8 m8" style="padding-left:200px;"><%= text_field_tag :search, params[:search], placeholder: "Search By Business name" %></div>
+    <div class="col l4 s4 m4" style="padding-top:10px;"><%= submit_tag "Search", class: "btn #1b5e20 green darken-4"%></div>
+    </div>
+<% end %>
+<div class= "row">
+<h1>businesses</h1>
+<% Business.all.each do |f|%>
+
+    <div class="col s12 m6 l6">
+    <div class="card horizontal">
+      <div class="card-image">
+        <%= image_tag f.business_photo_url, class: "responsive-img"%>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <span class="card-title"><%=f.business_name%></span>
+          <p><%= f.business_description%></p>
+        </div>
+        <div class="card-action">
+           <%= link_to("write a review", new_business_review_path(f) , class: "btn #212121 grey darken-4") %>
+           <%= link_to("details", business_path(f) , class: "btn #212121 grey darken-4") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%>
+<br><br><br>
+<h1>Events</h1>
+<% Business.all.each do |f|%>
+  <% f.events.all.each do |e|%>
+      <div class="col s12 m6 l6">
+      <div class="card horizontal">
+        <div class="card-image">
+         
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="card-title"><%=e.event_name%></span>
+            <p><%= e.event_description%></p>
+          </div>
+          <div class="card-action">
+             <%= link_to("details", business_event_path(f,e) , class: "btn #212121 grey darken-4") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%end%>
+<%end%>
+</div>
+
+

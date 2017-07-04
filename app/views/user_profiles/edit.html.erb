@@ -1,2 +1,20 @@
-<h1>UserProfile#edit</h1>
-<p>Find me in app/views/user_profile/edit.html.erb</p>
+<% provide(:title, "| Setting Up Profile") %>
+<div class="contanier">
+	<div class="row">
+		<div class="col l8 offset-l2">
+
+			<div class="card">
+				<div class="card-content">
+					<span class="center"><%= link_to image_tag("3", :alt => "logo"), root_path %></span>
+					<span class="card-title">update User Profile</span>
+					<%=	form_for(@user_profile)	do	|f|	%>
+						<%= render(:partial => "form", :locals => {:f => f}) %>
+						<div class="actions center">
+              				<span><%= f.button "updtae Profile", :class => "btn waves-effect waves-light btn-large"%></span>
+            			</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
